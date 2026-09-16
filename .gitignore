@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# 运行时数据
+data/*.db
+data/uploads/
+data/test_meal.png
+data/test_shrimp.png
+
+# 环境
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+
+# 运行日志
+*.log
+
+# 个人文档（简历内容等，不公开）
+docs/resume_content.md

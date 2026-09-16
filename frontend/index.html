@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多 agent 健康饮食助理</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app">
+  <!-- 顶栏 -->
+  <header class="topbar">
+    <div class="logo">🥗 多 agent 健康饮食助理</div>
+    <div class="badge" id="mode-badge">加载中…</div>
+  </header>
+
+  <div class="layout">
+    <!-- 左栏 -->
+    <aside class="side">
+      <!-- 上传区 -->
+      <section class="card">
+        <h2>上传饮食图片</h2>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="file-input" accept="image/*" hidden>
+          <div id="dz-hint">点击或拖拽图片到此处</div>
+          <img id="dz-preview" hidden>
+          <div id="dz-name"></div>
+        </div>
+        <div class="field">
+          <label>餐次</label>
+          <select id="meal-type">
+            <option value="早餐">早餐</option>
+            <option value="午餐" selected>午餐</option>
+            <option value="晚餐">晚餐</option>
+            <option value="加餐">加餐</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>附加要求（可选）</label>
+          <input id="constraint" placeholder="如：重点看蛋白质够不够">
+        </div>
+        <button id="analyze-btn" class="primary">开始分析</button>
+        <div class="progress-bar" id="progress" hidden><div></div></div>
+      </section>
+
+      <!-- 画像设置 -->
+      <section class="card">
+        <h2>我的健康画像</h2>
+        <div class="grid2">
+          <div class="field"><label>性别</label>
+            <select id="p-gender"><option>男</option><option>女</option></select></div>
+          <div class="field"><label>年龄</label><input id="p-age" type="number" min="10" max="100"></div>
+          <div class="field"><label>身高 cm</label><input id="p-height" type="number" min="100" max="220"></div>
+          <div class="field"><label>体重 kg</label><input id="p-weight" type="number" min="30" max="200"></div>
+          <div class="field"><label>目标</label>
+            <select id="p-goal"><option>保持健康</option><option>减脂</option><option>增肌</option></select></div>
+          <div class="field"><label>活动水平</label>
+            <select id="p-activity"><option>久坐</option><option selected>轻量运动</option><option>中等运动</option><option>高强度运动</option></select></div>
+        </div>
+        <button id="save-profile" class="ghost">保存画像</button>
+        <div class="toast" id="profile-toast"></div>
+      </section>
+
+      <!-- 历史 -->
+      <section class="card">
+        <h2>历史记录</h2>
+        <div id="meal-list"><div class="empty">还没有记录</div></div>
+      </section>
+    </aside>
+
+    <!-- 右栏 -->
+    <main class="main">
+      <section class="card process-card">
+        <h2>执行过程</h2>
+        <div id="process"><div class="empty">上传图片后点击「开始分析」，这里会实时显示多 Agent 执行进度</div></div>
+      </section>
+
+      <section class="card report-card" id="report-card" hidden>
+        <h2>分析报告</h2>
+        <div id="report"></div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
