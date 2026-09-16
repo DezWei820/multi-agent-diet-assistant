@@ -1,4 +1,4 @@
-/* 多 agent 健康饮食助理 · 前端逻辑：上传、SSE 流式过程、报告渲染、画像与历史 */
+/* 多agent健康饮食助理 · 前端逻辑：上传、SSE 流式过程、报告渲染、画像与历史 */
 "use strict";
 
 const $ = (id) => document.getElementById(id);
