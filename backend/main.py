@@ -36,7 +36,7 @@ async def lifespan(app):
     yield
 
 # ---------- FastAPI 实例 ----------
-app = FastAPI(title="多 agent 健康饮食助理 API", lifespan=lifespan)
+app = FastAPI(title="基于多Agent编排的饮食营养智能分析与健康评估系统 API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

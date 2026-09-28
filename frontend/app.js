@@ -1,4 +1,4 @@
-/* 多agent健康饮食助理 · 前端逻辑：上传、SSE 流式过程、报告渲染、画像与历史 */
+/* 基于多Agent编排的饮食营养智能分析与健康评估系统 · 前端逻辑：上传、SSE 流式过程、报告渲染、画像与历史 */
 "use strict";
 
 const $ = (id) => document.getElementById(id);
